@@ -14,7 +14,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsManager.fetchData()
+        newsManager.fetchData(countryId: CountryType.estadosUnidos,
+                              success: { (news) in
+                                print("-------separador-----")
+                                print(news.articles.last?.title)
+//                                self.articles = news.articles
+                                
+                              })
         
     }
 
