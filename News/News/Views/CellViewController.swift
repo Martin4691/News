@@ -7,9 +7,13 @@
 import UIKit
 import Foundation
 
-class CellVC:   {
+class NewsCellDetailVC: UITableViewCell   {
     
+    @IBOutlet weak var imageCellOut: UIImageView!
     
+    @IBOutlet weak var labelCellOut: UILabel!
+    
+
     
 }
 
