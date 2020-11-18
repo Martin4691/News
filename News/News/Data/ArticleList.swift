@@ -10,7 +10,7 @@ import Foundation
 struct ArticleList: Decodable {
     let status: String
     let totalResults: Int
-    let articles: [Articles]
+    let articles: [Article]
     
 }
 

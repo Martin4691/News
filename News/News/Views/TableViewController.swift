@@ -4,26 +4,32 @@
 //
 //  Created by Martín on 17/11/2020.
 //
-
+import Alamofire
+import AlamofireImage
 import UIKit
 import Foundation
 
 class TableViewController: UITableViewController {
         
     let newsManager = NewsManager()
-    var articles: [Articles]?
+    var article: [Article]?
 
+    
+    var currentDescription: String = ""
+    var titleDescription: String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchHeadlines()
+//        fetchHeadlines()
+        fetchEverything()
         
-        
+          
         
     }
-    
     private func fetchHeadlines() {
-    newsManager.fetchData(countryId: CountryType.newZeland,                        success: { (news) in
-                            self.articles = news.articles
+    newsManager.fetchHeadlines(countryId: CountryType.newZeland,                        success: { (news) in
+                            self.article = news.articles
                             self.tableView.reloadData()
         
         print("----separator----")
@@ -31,6 +37,14 @@ class TableViewController: UITableViewController {
     })
     }
 
+    private func fetchEverything() {
+        newsManager.fetchEverythings(query: "q", success:{ (news) in
+                                    self.article = news.articles
+                                    self.tableView.reloadData()
+                                    print("-------separador-----")
+                                    print(news.articles.last?.title)
+                                    })
+    }
 
 
         
@@ -40,21 +54,49 @@ class TableViewController: UITableViewController {
         
     override func tableView(_ collectionView: UITableView, numberOfRowsInSection section: Int) -> Int {
           
-            return articles?.count ?? 0
+            return article?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         if let newsCell = (cell as? NewsCellDetailVC),
-            let article: Articles = articles?[indexPath.row]
+            let article: Article = article?[indexPath.row]
         {
             newsCell.labelCellOut.text = article.title
-        
+            newsCell.imageCellOut.af.setImage(withURL: URL(string: article.urlToImage!)!)
         } else {
             cell.backgroundColor = .black
         }
         return cell
     }
+    
+    
+    
+            // MARK:    - Navigation:
+
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentDescription = article![indexPath.row].description!
+        titleDescription = article![indexPath.row].title!
+        
+        NewsViewModel.selectedArticle = article?[indexPath.row]
+        
+        performSegue(withIdentifier: "goToDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let destinationVC = segue.destination as? DetailViewController {
+            destinationVC.descriptionText = currentDescription
+            destinationVC.labelText = titleDescription
+       
+        }
+    }
+    
+    
+    
+    
     
     
     

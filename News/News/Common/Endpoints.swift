@@ -9,7 +9,8 @@ import Foundation
 
 enum Endpoints: String {
     case headlines = "https://newsapi.org/v2/top-headlines"
-    case everythings
+    case everythings = "https://newsapi.org/v2/everything"
+    case sources
     
     var url: String { self.rawValue }
     
