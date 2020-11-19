@@ -17,6 +17,8 @@ class TableViewController: UITableViewController {
     
     var currentDescription: String = ""
     var titleDescription: String = ""
+    var textForAuthor: String = ""
+    var textForDate: String = ""
     
     
     override func viewDidLoad() {
@@ -24,9 +26,9 @@ class TableViewController: UITableViewController {
 //        fetchHeadlines()
         fetchEverything()
         
-          
-        
     }
+    
+    
     private func fetchHeadlines() {
     newsManager.fetchHeadlines(countryId: CountryType.newZeland,                        success: { (news) in
                             self.article = news.articles
@@ -78,6 +80,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentDescription = article![indexPath.row].description!
         titleDescription = article![indexPath.row].title!
+        textForDate = article![indexPath.row].author!
+        textForAuthor =  article![indexPath.row].publishedAt!
         
         NewsViewModel.selectedArticle = article?[indexPath.row]
         
@@ -89,7 +93,9 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if let destinationVC = segue.destination as? DetailViewController {
             destinationVC.descriptionText = currentDescription
-            destinationVC.labelText = titleDescription
+            destinationVC.labelTextTitle = titleDescription
+            destinationVC.labelTextDate = textForDate
+            destinationVC.labelTextAuthor = textForAuthor
        
         }
     }
