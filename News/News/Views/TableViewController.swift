@@ -11,6 +11,9 @@ import Foundation
 
 class TableViewController: UITableViewController {
         
+    @IBOutlet weak var seachrBarOut: UITextField!
+    
+    
     let newsManager = NewsManager()
     var article: [Article]?
 
@@ -23,9 +26,11 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchHeadlines()
-        fetchEverything()
+//        fetch headlines para mostrar noticias y everythings para el buscador.
         
+      fetchHeadlines()
+//        fetchEverything()
+    
     }
     
     
@@ -39,7 +44,7 @@ class TableViewController: UITableViewController {
     })
     }
 
-    private func fetchEverything() {
+    private func fetchEverything(query: String?) {
         newsManager.fetchEverythings(query: "q", success:{ (news) in
                                     self.article = news.articles
                                     self.tableView.reloadData()
@@ -48,8 +53,6 @@ class TableViewController: UITableViewController {
                                     })
     }
 
-
-        
         override func numberOfSections(in tableView: UITableView) -> Int {
             return 1
         }
@@ -76,7 +79,6 @@ class TableViewController: UITableViewController {
     
             // MARK:    - Navigation:
 
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentDescription = article![indexPath.row].description!
         titleDescription = article![indexPath.row].title!
@@ -88,22 +90,43 @@ class TableViewController: UITableViewController {
         performSegue(withIdentifier: "goToDetail", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if let destinationVC = segue.destination as? DetailViewController {
-            destinationVC.descriptionText = currentDescription
-            destinationVC.labelTextTitle = titleDescription
-            destinationVC.labelTextDate = textForDate
-            destinationVC.labelTextAuthor = textForAuthor
-       
-        }
+    
+    // esto fue comentado por CESC para que no usase el parametro a parametro y crease un nuevo newsViewModel.selectedArticle en DetailViewController:
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        if let destinationVC = segue.destination as? DetailViewController {
+////            destinationVC.descriptionText = currentDescription
+////            destinationVC.labelTextTitle = titleDescription
+////            destinationVC.labelTextDate = textForDate
+////            destinationVC.labelTextAuthor = textForAuthor
+//            destinationVC.articleInDetail = NewsViewModel
+//
+//        }
+//    }
+    
+    
+    @IBAction func seachBarAct(_ sender: Any) {
+        
     }
     
+}
+
+
+
+extension TableViewController: UITextFieldDelegate {
     
-    
-    
-    
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fetchEverything(query: "\(textField.text!)")
+        print("Has escrito: \(textField.text!)")
+        return true
+    }
+
     
 }
+
+
+
+
+

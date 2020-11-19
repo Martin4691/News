@@ -56,6 +56,9 @@
                                 <state key="normal" image="safari" catalog="system">
                                     <color key="titleShadowColor" systemColor="linkColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="safariButtonAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kNG-th-lPl"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vK6-Md-Pr5">
                                 <rect key="frame" x="10" y="513" width="394" height="299"/>
@@ -105,6 +108,7 @@
                         <outlet property="labelAuthorOut" destination="Fs3-aM-Xu4" id="5Ff-BS-JuA"/>
                         <outlet property="labelDateOut" destination="kIw-f5-jNU" id="iIl-as-dbO"/>
                         <outlet property="labelTitleOut" destination="IFv-zl-yTz" id="Kso-k3-Pcw"/>
+                        <outlet property="safariButtonOut" destination="Mkr-bk-opa" id="Ya7-Wd-eHy"/>
                         <outlet property="textViewOut" destination="vK6-Md-Pr5" id="daf-WN-F3J"/>
                     </connections>
                 </viewController>
@@ -120,9 +124,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Seach Bar..." borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="8ic-NO-WFJ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <connections>
+                                <action selector="seachBarAct:" destination="lUM-hi-GD0" eventType="editingDidEnd" id="E14-gA-WNg"/>
+                                <outlet property="delegate" destination="lUM-hi-GD0" id="ERx-yD-lHN"/>
+                            </connections>
+                        </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Ufb-kR-824" customClass="NewsCellDetailVC" customModule="News" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80.5"/>
+                                <rect key="frame" x="0.0" y="62" width="414" height="80.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ufb-kR-824" id="IYZ-hZ-EVV">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
@@ -165,6 +181,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="News!" id="a1T-al-06j"/>
                     <connections>
+                        <outlet property="seachrBarOut" destination="8ic-NO-WFJ" id="XsY-1o-iMB"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToDetail" id="nQZ-xg-qEI"/>
                     </connections>
                 </tableViewController>
@@ -199,6 +216,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
