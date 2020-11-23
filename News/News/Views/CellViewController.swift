@@ -15,7 +15,7 @@ class NewsCellDetailVC: UITableViewCell   {
     
     @IBOutlet weak var labelCellOut: UILabel!
     
-
+    
     
     
     

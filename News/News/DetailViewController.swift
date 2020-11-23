@@ -22,11 +22,11 @@ class DetailViewController: UIViewController {
     var articles: [Article]?
     
     
-//    var descriptionText: String = ""
-//    var labelTextTitle: String = ""
-//    var labelTextDate: String = ""
-//    var labelTextAuthor: String = ""
-//    var articleInDetail: String = ""
+    //    var descriptionText: String = ""
+    //    var labelTextTitle: String = ""
+    //    var labelTextDate: String = ""
+    //    var labelTextAuthor: String = ""
+    //    var articleInDetail: String = ""
     
     
     override func viewDidLoad() {
@@ -47,16 +47,16 @@ class DetailViewController: UIViewController {
     
     private func configureView() {
         guard let article: Article = NewsViewModel.selectedArticle else { return }
-            labelTitleOut.text = article.title
-            labelDateOut.text = article.publishedAtFormatted
-            labelAuthorOut.text = article.author
-            textViewOut.text = article.description
-       
+        labelTitleOut.text = article.title
+        labelDateOut.text = article.publishedAtFormatted
+        labelAuthorOut.text = article.author
+        textViewOut.text = article.description
+        
         if let urlToImage = article.urlToImage,
-            let url = URL(string: urlToImage ) {
-           imageDetailOut.af.setImage(withURL: url)
-         }
-}
+           let url = URL(string: urlToImage ) {
+            imageDetailOut.af.setImage(withURL: url)
+        }
+    }
     
     @IBAction func safariButtonAct(_ sender: Any) {
         guard let article: Article = NewsViewModel.selectedArticle else { return }

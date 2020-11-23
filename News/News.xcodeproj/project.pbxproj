@@ -12,6 +12,10 @@
 		5B080EBF2563E25500CA85D9 /* CountryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B080EBE2563E25500CA85D9 /* CountryType.swift */; };
 		5B080EC22564081A00CA85D9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B080EC12564081A00CA85D9 /* TableViewController.swift */; };
 		5B080EC52564084200CA85D9 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B080EC42564084200CA85D9 /* CellViewController.swift */; };
+		5B45DC0C2567C29E00610772 /* FullSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45DC0B2567C29E00610772 /* FullSource.swift */; };
+		5B45DC0F2567C30200610772 /* SourcesParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45DC0E2567C30200610772 /* SourcesParameters.swift */; };
+		5B4EA67F256BB29400BA7090 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EA67E256BB29400BA7090 /* Movie.swift */; };
+		5B4EA683256BB78500BA7090 /* AllMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EA682256BB78500BA7090 /* AllMovies.swift */; };
 		5BB9D40F256292D000B06BC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9D40E256292D000B06BC7 /* AppDelegate.swift */; };
 		5BB9D411256292D000B06BC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9D410256292D000B06BC7 /* SceneDelegate.swift */; };
 		5BB9D413256292D000B06BC7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9D412256292D000B06BC7 /* DetailViewController.swift */; };
@@ -31,6 +35,10 @@
 		5B080EBE2563E25500CA85D9 /* CountryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryType.swift; sourceTree = "<group>"; };
 		5B080EC12564081A00CA85D9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5B080EC42564084200CA85D9 /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
+		5B45DC0B2567C29E00610772 /* FullSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSource.swift; sourceTree = "<group>"; };
+		5B45DC0E2567C30200610772 /* SourcesParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesParameters.swift; sourceTree = "<group>"; };
+		5B4EA67E256BB29400BA7090 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		5B4EA682256BB78500BA7090 /* AllMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMovies.swift; sourceTree = "<group>"; };
 		5BB9D40B256292D000B06BC7 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB9D40E256292D000B06BC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB9D410256292D000B06BC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,10 @@
 				5BD642162562B5E300297BC6 /* ArticleList.swift */,
 				5BD642152562B5E300297BC6 /* Article.swift */,
 				5BD642142562B5E300297BC6 /* Source.swift */,
+				5B45DC0B2567C29E00610772 /* FullSource.swift */,
+				5B45DC0E2567C30200610772 /* SourcesParameters.swift */,
+				5B4EA682256BB78500BA7090 /* AllMovies.swift */,
+				5B4EA67E256BB29400BA7090 /* Movie.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -268,10 +280,14 @@
 				5BD642182562B5E300297BC6 /* Article.swift in Sources */,
 				5BD642192562B5E300297BC6 /* ArticleList.swift in Sources */,
 				5B080EC22564081A00CA85D9 /* TableViewController.swift in Sources */,
+				5B45DC0F2567C30200610772 /* SourcesParameters.swift in Sources */,
 				5BD6421C2562B5F200297BC6 /* Endpoints.swift in Sources */,
+				5B4EA683256BB78500BA7090 /* AllMovies.swift in Sources */,
+				5B4EA67F256BB29400BA7090 /* Movie.swift in Sources */,
 				5B080EBF2563E25500CA85D9 /* CountryType.swift in Sources */,
 				5B080EBC2563CAB200CA85D9 /* NewsManager.swift in Sources */,
 				5BEF8F1E25656802003B83E7 /* NewsViewModel.swift in Sources */,
+				5B45DC0C2567C29E00610772 /* FullSource.swift in Sources */,
 				5B080EC52564084200CA85D9 /* CellViewController.swift in Sources */,
 				5BB9D413256292D000B06BC7 /* DetailViewController.swift in Sources */,
 				5BB9D40F256292D000B06BC7 /* AppDelegate.swift in Sources */,
