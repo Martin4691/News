@@ -22,28 +22,13 @@ class DetailViewController: UIViewController {
     var articles: [Article]?
     
     
-    //    var descriptionText: String = ""
-    //    var labelTextTitle: String = ""
-    //    var labelTextDate: String = ""
-    //    var labelTextAuthor: String = ""
-    //    var articleInDetail: String = ""
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NewsViewModel.selectedArticle?.source.name
         configureView()
         
     }
-    
-    // Los datos/nombres de date y auhtor estan cruzados.
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        textViewOut.text = descriptionText
-    //        labelTitleOut.text = labelTextTitle
-    //        labelDateOut.text = labelTextAuthor
-    //        labelAuthorOut.text = labelTextDate
-    //
-    //    }
+
     
     private func configureView() {
         guard let article: Article = NewsViewModel.selectedArticle else { return }

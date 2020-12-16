@@ -112,7 +112,6 @@
 				5BD642132562B5BF00297BC6 /* Data */,
 				5BB9D40E256292D000B06BC7 /* AppDelegate.swift */,
 				5BB9D410256292D000B06BC7 /* SceneDelegate.swift */,
-				5BB9D412256292D000B06BC7 /* DetailViewController.swift */,
 				5BB9D414256292D000B06BC7 /* Main.storyboard */,
 				5BB9D417256292D200B06BC7 /* Assets.xcassets */,
 				5BB9D419256292D200B06BC7 /* LaunchScreen.storyboard */,
@@ -134,6 +133,7 @@
 		5BD642112562B5B100297BC6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5BB9D412256292D000B06BC7 /* DetailViewController.swift */,
 				5B080EC12564081A00CA85D9 /* TableViewController.swift */,
 				5B080EC42564084200CA85D9 /* CellViewController.swift */,
 			);
@@ -442,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JN234S6LJ9;
 				INFOPLIST_FILE = News/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JN234S6LJ9;
 				INFOPLIST_FILE = News/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
