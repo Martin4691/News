@@ -12,12 +12,7 @@ import Foundation
 class NewsCellDetailVC: UITableViewCell   {
     
     @IBOutlet weak var imageCellOut: UIImageView!
-    
     @IBOutlet weak var labelCellOut: UILabel!
-    
-    
-    
-    
     
 }
 
